@@ -33,4 +33,4 @@ end
 
 --
 
-script.on_nth_tick(60 * 60, labs.every_minute)
+script.on_nth_tick(settings.startup["lab-resupply-interval"].value, labs.every_minute)
