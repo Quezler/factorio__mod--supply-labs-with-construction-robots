@@ -4,8 +4,9 @@ local labs = {}
 --
 
 function labs.init()
-  global.entries = {}
+  global.proxy_to_entry_map = {}
 
+  global.entries = {}
   for _, surface in pairs(game.surfaces) do
     for _, entity in pairs(surface.find_entities_filtered({ type = "lab" })) do
       labs.register(entity)
@@ -28,8 +29,6 @@ function labs.init()
   for _, force in pairs(game.forces) do
     labs.on_research_changed({research = {force = force}})
   end
-
-  global.proxy_to_entry_map = {}
 end
 
 function labs.on_created_entity(event)
