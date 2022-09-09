@@ -33,7 +33,7 @@ end
 
 function labs.on_created_entity(event)
   local entity = event.created_entity or event.entity or event.destination
-  if not entity.type == "lab" then return end
+  if entity.type ~= "lab" then return end
 
   labs.register(entity)
 end
